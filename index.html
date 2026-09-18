@@ -3,310 +3,40 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Marketing Technician building zero-overhead customer acquisition pipelines with static code and no recurring platform bills.">
-  <title>Stop Renting Your Growth</title>
+  <meta name="description" content="Build a customer acquisition pipeline you own, understand, and can improve without bloated recurring software costs.">
+  <title>Build a Customer Acquisition Pipeline You Own</title>
   <style>
-    :root {
-      --navy: #0b0f19;
-      --slate: #131a2e;
-      --slate-2: #1a2440;
-      --cyan: #38bdf8;
-      --cyan-soft: #7dd3fc;
-      --white: #f8fafc;
-      --muted: #aeb7c9;
-      --line: rgba(148, 163, 184, 0.22);
-      --shadow: rgba(0, 0, 0, 0.35);
-    }
-
-    * { box-sizing: border-box; }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--navy);
-      color: var(--white);
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .page {
-      width: min(1180px, calc(100% - 36px));
-      padding: 28px 0 50px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
-      gap: clamp(38px, 5vw, 92px);
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--cyan);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 2px;
-      background: var(--cyan);
-      display: inline-block;
-    }
-
-    h1 {
-      margin: 20px 0 18px;
-      max-width: 680px;
-      font-size: clamp(44px, 5.8vw, 78px);
-      line-height: 0.96;
-      letter-spacing: -0.055em;
-      font-weight: 900;
-    }
-
-    h1 em {
-      color: var(--cyan);
-      font-style: normal;
-    }
-
-    .lead {
-      margin: 0;
-      max-width: 620px;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.72;
-    }
-
-    .lead strong {
-      color: var(--white);
-      font-weight: 700;
-    }
-
-    .benefits {
-      list-style: none;
-      margin: 34px 0 0;
-      padding: 0;
-      display: grid;
-      gap: 18px;
-    }
-
-    .benefit {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-    }
-
-    .icon {
-      flex: 0 0 30px;
-      width: 30px;
-      height: 30px;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(56, 189, 248, 0.6);
-      border-radius: 50%;
-      color: var(--cyan);
-      font-size: 18px;
-      font-weight: 900;
-      line-height: 1;
-    }
-
-    .benefit strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 15px;
-      font-weight: 800;
-    }
-
-    .benefit p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.56;
-    }
-
-    .media-stack {
-      display: grid;
-      gap: 0;
-      width: 100%;
-    }
-
-    .photo-box {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-bottom: none;
-      border-radius: 18px 18px 0 0;
-      overflow: hidden;
-      background: var(--slate);
-      box-shadow: 0 25px 60px var(--shadow);
-    }
-
-    .photo-box img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      min-height: 420px;
-      object-fit: cover;
-      object-position: center top;
-      background: #d9d3cb;
-    }
-
-    .capture {
-      background: var(--slate);
-      border: 1px solid rgba(56, 189, 248, 0.36);
-      border-top: none;
-      border-radius: 0 0 18px 18px;
-      padding: 28px 28px 24px;
-    }
-
-    .capture h2 {
-      margin: 0 0 8px;
-      font-size: clamp(24px, 2vw, 30px);
-      letter-spacing: -0.04em;
-      font-weight: 900;
-    }
-
-    .capture p {
-      margin: 0 0 20px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.55;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--white);
-    }
-
-    input[type="email"] {
-      width: 100%;
-      padding: 16px 15px;
-      border-radius: 8px;
-      border: 1px solid #3d4a68;
-      background: var(--navy);
-      color: var(--white);
-      font-size: 16px;
-      outline: none;
-    }
-
-    input[type="email"]:focus {
-      border-color: var(--cyan);
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.18);
-    }
-
-    button {
-      width: 100%;
-      margin-top: 14px;
-      padding: 17px 14px;
-      border: 0;
-      border-radius: 8px;
-      background: var(--cyan);
-      color: var(--navy);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-
-    button:hover {
-      background: var(--cyan-soft);
-      transform: translateY(-1px);
-    }
-
-    .fine-print {
-      margin-top: 14px !important;
-      text-align: center;
-      font-size: 11px !important;
-    }
-
-    @media (max-width: 820px) {
-      .grid {
-        grid-template-columns: 1fr;
-        gap: 42px;
-      }
-
-      .page {
-        width: min(100% - 28px, 640px);
-      }
-
-      .photo-box img {
-        min-height: 300px;
-      }
-    }
+    :root{--navy:#0b0f19;--slate:#131a2e;--slate2:#1b2742;--cyan:#38bdf8;--cyan2:#7dd3fc;--white:#f8fafc;--muted:#aeb8ca;--line:rgba(148,163,184,.22);--shadow:rgba(0,0,0,.4)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);color:var(--white);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body:before{content:"";position:fixed;z-index:-1;top:-240px;right:-180px;width:650px;height:650px;background:#075985;opacity:.2;filter:blur(125px);pointer-events:none}.page{width:min(1160px,calc(100% - 36px));margin:auto;padding:32px 0 58px}.announcement{display:flex;justify-content:center;align-items:center;gap:9px;margin-bottom:42px;color:var(--muted);font-size:12px;letter-spacing:.06em;text-align:center}.announcement b{padding:5px 9px;border:1px solid rgba(56,189,248,.5);border-radius:99px;color:var(--cyan);font-size:10px;letter-spacing:.12em;text-transform:uppercase}.grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);gap:clamp(42px,7vw,96px);align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}.eyebrow:before{content:"";width:28px;height:2px;background:var(--cyan)}h1{max-width:700px;margin:19px 0 21px;font-size:clamp(44px,6vw,78px);line-height:.95;letter-spacing:-.06em;font-weight:900}h1 em{color:var(--cyan);font-style:normal}.lead{max-width:630px;margin:0;color:var(--muted);font-size:18px;line-height:1.72}.lead strong{color:var(--white)}.positioning{display:flex;gap:10px;align-items:flex-start;max-width:600px;margin:19px 0 0;padding:14px 15px;border-left:2px solid var(--cyan);background:rgba(19,26,46,.62);color:#c9d3e3;font-size:13px;line-height:1.55}.positioning b{color:var(--white)}.benefits{display:grid;gap:17px;margin:32px 0 0;padding:0;list-style:none}.benefit{display:flex;gap:14px;align-items:flex-start}.icon{display:grid;place-items:center;flex:0 0 30px;width:30px;height:30px;border:1px solid rgba(56,189,248,.65);border-radius:50%;color:var(--cyan);font-size:17px;font-weight:900}.benefit strong{display:block;margin-bottom:4px;font-size:15px}.benefit p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}.micro-proof{display:flex;flex-wrap:wrap;gap:18px;margin-top:30px;color:#75839a;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.micro-proof span:before{content:"✓";margin-right:6px;color:var(--cyan)}.media{display:grid}.photo-box{overflow:hidden;border:1px solid var(--line);border-bottom:0;border-radius:18px 18px 0 0;background:var(--slate);box-shadow:0 25px 65px var(--shadow)}.photo-box img{display:block;width:100%;height:420px;object-fit:cover;object-position:center top;background:#d9d3cb}.capture{padding:28px;border:1px solid rgba(56,189,248,.38);border-radius:0 0 18px 18px;background:var(--slate)}.capture h2{margin:0 0 8px;font-size:28px;letter-spacing:-.04em}.capture>p{margin:0 0 21px;color:var(--muted);font-size:14px;line-height:1.55}label{display:block;margin-bottom:8px;color:var(--white);font-size:11px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}input{width:100%;padding:16px 15px;border:1px solid #3d4a68;border-radius:8px;background:var(--navy);color:var(--white);font:inherit;outline:none}input:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(56,189,248,.18)}button{width:100%;margin-top:13px;padding:17px 12px;border:0;border-radius:8px;background:var(--cyan);color:var(--navy);font:inherit;font-size:12px;font-weight:900;letter-spacing:.08em;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s}button:hover{background:var(--cyan2);box-shadow:0 12px 28px rgba(56,189,248,.23);transform:translateY(-2px)}.fine{margin:13px 0 0!important;text-align:center;font-size:11px!important}.below{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:88px;padding-top:28px;border-top:1px solid var(--line)}.step{padding:20px;border:1px solid var(--line);border-radius:12px;background:rgba(19,26,46,.58)}.step-num{color:var(--cyan);font-size:11px;font-weight:900;letter-spacing:.12em}.step h3{margin:11px 0 7px;font-size:16px}.step p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}.footer-note{margin-top:30px;color:#68758d;font-size:11px;text-align:center}@media(max-width:820px){.page{width:min(100% - 28px,640px);padding-top:22px}.announcement{margin-bottom:30px}.grid{grid-template-columns:1fr;gap:43px}h1{font-size:clamp(44px,13vw,66px)}.lead{font-size:16px}.photo-box img{height:360px}.below{grid-template-columns:1fr;margin-top:62px}}
   </style>
 </head>
 <body>
   <main class="page">
+    <div class="announcement"><b>Independent operator</b><span>Lean systems. Clear messaging. More qualified conversations.</span></div>
     <div class="grid">
       <section aria-labelledby="headline">
-        <div class="eyebrow">The anti-monopoly growth system</div>
-        <h1 id="headline">Stop renting your growth from <em>overpriced software monopolies.</em></h1>
-
-        <p class="lead">
-          <strong>Job "Jey" Njoroge is a Marketing Technician</strong> who engineers zero-overhead customer acquisition infrastructure using open-source static code to eliminate recurring platform bills and keep the entire system under your control.
-        </p>
-
+        <div class="eyebrow">The customer acquisition advantage</div>
+        <h1 id="headline">Build a <em>pipeline you own</em>—not another monthly bill.</h1>
+        <p class="lead"><strong>Job "Jey" Njoroge is a Marketing Technician</strong> who builds customer acquisition pipelines with open-source static code, focused messaging, and a direct path from attention to action.</p>
+        <div class="positioning"><span aria-hidden="true">◆</span><span><b>A practical alternative to bloated platforms.</b> Get the infrastructure your operation needs without paying for layers you do not use.</span></div>
         <ul class="benefits">
-          <li class="benefit">
-            <span class="icon" aria-hidden="true">✓</span>
-            <div>
-              <strong>Own the actual pipeline</strong>
-              <p>Your funnel, conversion flow, and customer journey stay under your control instead of living inside someone else’s platform.</p>
-            </div>
-          </li>
-          <li class="benefit">
-            <span class="icon" aria-hidden="true">✓</span>
-            <div>
-              <strong>Remove recurring overhead</strong>
-              <p>Replace bloated subscriptions with lean, open-source customer acquisition systems that are faster and more resilient.</p>
-            </div>
-          </li>
-          <li class="benefit">
-            <span class="icon" aria-hidden="true">✓</span>
-            <div>
-              <strong>Turn attention into action</strong>
-              <p>Build a customer acquisition pipeline that routes more qualified traffic into actual bookings, calls, and revenue.</p>
-            </div>
-          </li>
+          <li class="benefit"><span class="icon">✓</span><div><strong>Make your offer easier to act on</strong><p>Clarify the message and remove friction between a prospect’s first click and their next conversation.</p></div></li>
+          <li class="benefit"><span class="icon">✓</span><div><strong>Reduce unnecessary overhead</strong><p>Use fast, resilient static infrastructure instead of stacking recurring tools onto every part of the journey.</p></div></li>
+          <li class="benefit"><span class="icon">✓</span><div><strong>Keep the system understandable</strong><p>Build a customer acquisition pipeline you can own, inspect, improve, and take with you.</p></div></li>
         </ul>
+        <div class="micro-proof"><span>Open-source first</span><span>Mobile-ready</span><span>Built for ownership</span></div>
       </section>
-
-      <aside class="media-stack" aria-label="Lead capture panel">
-        <div class="photo-box">
-          <img src="./profile.jpg" alt='Job "Jey" Njoroge portrait'>
-        </div>
-
-        <div class="capture">
-          <h2>Find the leaks in your pipeline.</h2>
-          <p>Input your business email and request a direct operational audit of your current customer acquisition setup.</p>
-
-          <form action="https://cal.com" method="GET">
-            <label for="email">Business email</label>
-            <input id="email" name="email" type="email" placeholder="you@yourbusiness.com" autocomplete="email" required>
-            <button type="submit">SECURE MY OPERATIONAL AUDIT</button>
-          </form>
-
-          <p class="fine-print">No bloated software demo. No fluff. Just a practical next step.</p>
-        </div>
+      <aside class="media" aria-label="Operational audit request">
+        <div class="photo-box"><img src="./profile.jpg" alt='Job "Jey" Njoroge portrait'></div>
+        <div class="capture"><h2>Find the leaks in your pipeline.</h2><p>Request a focused operational audit and leave with a clearer next step for turning qualified interest into booked conversations.</p><form action="https://cal.com" method="GET"><label for="email">Business email</label><input id="email" name="email" type="email" placeholder="you@yourbusiness.com" autocomplete="email" required><button type="submit">SECURE MY OPERATIONAL AUDIT</button></form><p class="fine">15 minutes · No bloated software demo · No pressure</p></div>
       </aside>
     </div>
+    <section class="below" aria-label="How the process works">
+      <div class="step"><div class="step-num">01 / CLARIFY</div><h3>Sharpen the offer</h3><p>Identify what your best prospects need to understand before they take action.</p></div>
+      <div class="step"><div class="step-num">02 / BUILD</div><h3>Connect the journey</h3><p>Turn the message into a focused customer acquisition pipeline with fewer points of friction.</p></div>
+      <div class="step"><div class="step-num">03 / IMPROVE</div><h3>Measure what matters</h3><p>Use real conversations and behavior to improve the path instead of guessing.</p></div>
+    </section>
+    <div class="footer-note">Independent customer acquisition infrastructure · Built with lean, portable technology</div>
   </main>
 </body>
 </html>
